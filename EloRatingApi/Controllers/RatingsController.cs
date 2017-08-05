@@ -12,7 +12,7 @@ namespace EloRatingApi.Controllers
         [SwaggerOperation("CalculateNewRating")]
         [SwaggerResponse(HttpStatusCode.OK)]
         [SwaggerResponse(HttpStatusCode.BadRequest)]
-        public string Get(double ratingA, double ratingB, double scoreA, double scoreB)
+        public Result Get(double ratingA, double ratingB, double scoreA, double scoreB)
         {
             Rating rating = new Rating(ratingA, ratingB, scoreA, scoreB);
             List<double> ratingsList = rating.GetNewRatings();
@@ -28,9 +28,9 @@ namespace EloRatingApi.Controllers
             result.RatingChangeA = ratingChanges[0];
             result.RatingChangeB = ratingChanges[1];
 
-            string finalResult = JsonConvert.SerializeObject(result);
+            //string finalResult = JsonConvert.SerializeObject(result);
 
-            return finalResult;
+            return result;
         }
     }
 }
