@@ -13,7 +13,7 @@ namespace EloRatingApi.Models
          * For now set to 15 for everyone.
          */
 
-        private const int KFACTOR = 15;
+        private const int KFACTOR = 32;
 
         public const double WIN = 1;
         public const double LOOSE = 0;
